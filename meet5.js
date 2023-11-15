@@ -11,12 +11,36 @@ const todo = {
 
 const todos = [];
 
-function create() {}
+function create(todo) {
+  todos.push(todo);
+  return todo;
+}
 
-function list() {}
+function list() {
+  return todos;
+}
 
-function get() {}
+function get(id) {
+  for (let i = 0; i < todos.length; i++) {
+    if (todos[i].id === id) {
+      return todos[i];
+    }
+  }
+}
 
-function update() {}
+function update(todo) {
+  for (let i = 0; i < todos.length; i++) {
+    if (todos[i].id === id) {
+      todos[i] = todo;
+      return todo;
+    }
+  }
+}
 
-function remove() {}
+function remove(id) {
+  for (let i = 0; i < todos.length; i++) {
+    if (todos[i].id === id) {
+      todos.splice(i, 1);
+    }
+  }
+}
