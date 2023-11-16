@@ -9,6 +9,10 @@ const todo = {
 }
 */
 
+// Sort by Date (Priority)
+// Command by Redline via terminal (interactivity)
+// Grouping by status
+
 const todos = [];
 
 function create(todo) {
