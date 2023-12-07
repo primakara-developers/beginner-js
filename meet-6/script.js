@@ -27,3 +27,19 @@ description[0].style.fontStyle = 'italic';
 
 // Change the text color
 year.style.color = 'blue';
+
+// Function to say hello in console.log (web browser)
+function sayHello() {
+  console.log('Hello');
+}
+
+// Function for change the style color
+function changeColor() {
+  year.style.color = 'red';
+}
+
+// Define the btn element (DOM Selection)
+const btn = document.getElementById('btn-change');
+
+// Define the event (if the button clicked then run the changeColor function)
+btn.addEventListener('click', changeColor);
