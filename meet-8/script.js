@@ -11,7 +11,8 @@ function displayTodos() {
     todoList.innerHTML += `
     <li>
     ${todos[i]}
-    <button onclick="deleteTodo(${i})">X</button>
+    <button onclick="editTodo(${i})">Edit</button>
+    <button onclick="deleteTodo(${i})">Delete</button>
     </li>
     `;
   }
@@ -40,11 +41,28 @@ function addTodo() {
 }
 
 function deleteTodo(index) {
-  // Remove the task at the specified index
+  // Remove the todo at the specified index
   todos.splice(index, 1);
 
-  // Refresh the task list
+  // Refresh the todo list
   displayTodos();
+}
+
+function editTodo(index) {
+  // Prompt field for a new todo value
+  const newTodo = prompt("Edit todo:", todos[index]);
+
+  // Validate edited todo value
+  if (newTodo === "") {
+    alert("Todo value cannot empty!");
+  } else {
+    if (newTodo !== null) {
+      // Update the todo if the user entered a new description
+      todos[index] = newTodo;
+      // Refresh the todo list
+      displayTodos();
+    }
+  }
 }
 
 displayTodos();
