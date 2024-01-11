@@ -10,9 +10,9 @@ function displayTodos() {
   for (i = 0; i < todos.length; i++) {
     todoList.innerHTML += `
     <li>
-    ${todos[i]}
-    <button onclick="editTodo(${i})">Edit</button>
-    <button onclick="deleteTodo(${i})">Delete</button>
+    ${i + 1}. ${todos[i]}
+    <button class="btn-edit" onclick="editTodo(${i})">Edit</button>
+    <button class="btn-delete" onclick="deleteTodo(${i})">Delete</button>
     </li>
     `;
   }
@@ -28,10 +28,10 @@ function addTodo() {
   // Validate the input from empty value
   if (todoData.trim() === "") {
     alert("Input masih kosong!");
+  } else {
+    // Input new todo data to "todos" array
+    todos.push(todoData);
   }
-
-  // Input new todo data to "todos" array
-  todos.push(todoData);
 
   // Clear the input field value
   todoInput.value = "";

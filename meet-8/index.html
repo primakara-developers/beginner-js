@@ -4,20 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo Primakara Developers</title>
+
+    <style>
+      ul {
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #ddd;
+        padding: 8px;
+        margin-bottom: 6px;
+      }
+
+      .todo-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+
+      input {
+        height: 26px;
+        width: 200px;
+      }
+
+      .btn-kirim {
+        padding: 8px 16px;
+        background-color: cadetblue;
+        color: white;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 6px;
+      }
+
+      .btn-edit {
+        padding: 8px 16px;
+        background-color: blue;
+        color: white;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 6px;
+      }
+
+      .btn-delete {
+        padding: 8px 16px;
+        background-color: red;
+        color: white;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 6px;
+      }
+    </style>
   </head>
+
   <body>
-    <h1>ToDo List Primdev</h1>
+    <div class="todo-container">
+      <h1>ToDo List Primdev</h1>
 
-    <!-- Form element -->
-    <form id="todo-form">
-      <!-- Text input element -->
-      <input id="todo-input" type="text" placeholder="Masukkan todo" required />
-      <!-- Button element -->
-      <button type="button" onclick="addTodo()">Kirim</button>
-    </form>
+      <!-- Form element -->
+      <form id="todo-form">
+        <!-- Text input element -->
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Masukkan todo"
+          required
+        />
+        <!-- Button element -->
+        <button type="button" class="btn-kirim" onclick="addTodo()">
+          Kirim
+        </button>
+      </form>
 
-    <!-- List element -->
-    <ul id="todo-list"></ul>
+      <!-- List element -->
+      <ul id="todo-list"></ul>
+    </div>
 
     <script src="script.js"></script>
   </body>
