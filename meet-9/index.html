@@ -29,6 +29,16 @@
       }
 
       getQuotes();
+
+      // Fetch data using Promise
+      function getQuotesWithPromise() {
+        fetch("https://api.quotable.io/quotes/random?limit=6")
+          .then((response) => response.json())
+          .then((json) => console.log(json))
+          .catch((err) => console.log(err));
+      }
+
+      getQuotesWithPromise();
     </script>
   </body>
 </html>
