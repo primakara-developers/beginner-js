@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Fetch Data</title>
+  </head>
+
+  <body>
+    <h1>Quotes this Day</h1>
+
+    <ul id="content"></ul>
+
+    <script>
+      // Fetch data using Async/Await
+      async function getQuotes() {
+        // DOM Selection
+        const content = document.getElementById("content");
+
+        const response = await fetch(
+          "https://api.quotable.io/quotes/random?limit=3"
+        );
+        const quotes = await response.json();
+
+        for (i = 0; i < quotes.length; i++) {
+          content.innerHTML += `<li>${quotes[i].content}</li>`;
+        }
+      }
+
+      getQuotes();
+    </script>
+  </body>
+</html>
